@@ -1,0 +1,24 @@
+extends layout
+
+block title
+  title #{title}
+
+block content
+  form( method="POST", action='/users/'+selectedUser.id)
+    input(name="_method",value="delete", type="hidden")
+    input(id="delete", value="Delete", type="submit")
+  P
+    a(href='/users/'+ selectedUser.id + '/edit') Edit info
+  div
+    table
+      thead
+        tr
+          th User Name 
+          th Email
+          th created at
+      tbody
+        tr
+          td= selectedUser.username
+          td= selectedUser.email
+          td= selectedUser.created_at
+          //    a(href='users/'+ user.id) more details 

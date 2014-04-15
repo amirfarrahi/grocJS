@@ -1,0 +1,23 @@
+extends layout
+
+block title
+  title #{title}
+
+block content
+  h1= title
+  div
+    table
+      thead
+        tr
+          th Product  
+          th Store
+          th User
+          th Price
+      tbody
+        each deal in Deals
+          tr
+            td= deal.product.productname 
+            td= deal.store.storename 
+            td= deal.user.username
+            td  
+              a(href='/deals/'+ deal.id) more details           

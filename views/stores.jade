@@ -1,0 +1,26 @@
+extends layout
+
+block title
+  title #{title}
+
+block content
+  h1= title
+  div
+    table
+      thead
+        tr
+          th Name 
+          th Desc
+          th Add1
+          th City
+          th State
+          th Country
+          th Zip Code
+      tbody
+        each store in Stores
+          tr
+            td= store.storename 
+            td= store.desc
+            td
+              a(href='/stores/'+ store.id) more details
+                            

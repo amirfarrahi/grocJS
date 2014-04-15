@@ -1,0 +1,25 @@
+extends layout
+
+block title
+  title #{title}
+
+block content
+  h1= title
+  div
+    table
+      thead
+        tr
+          th User Name 
+          th Email
+          th More Info
+          th Deletelnk
+      tbody
+        each user in Users
+          tr
+            td= user.username 
+            td= user.email
+            td
+              a(href='/users/'+ user.id) more details
+            td
+              form(method="POST", action='/api/users/'+user.id)
+                input(name="_method",value="delete", type="hidden")                

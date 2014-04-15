@@ -1,0 +1,19 @@
+extends layout
+
+block title
+  title #{title}
+
+block content
+  p #{err}
+  form(method="POST", action="/products")
+    p
+      label(for="productname") Product Name:   
+        input(type='text', name='productname', value='', required)
+    p
+      label(for="desc") desc:
+        input(type='text', name='desc', value='')
+    p
+      label(for="brand") brand:
+        input(type='text', name='brand', value='', required)
+    p
+      input(type='submit', value='Add product')

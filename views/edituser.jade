@@ -1,0 +1,27 @@
+extends layout
+
+block title
+  title #{title}
+
+block content
+  p #{err}
+  form(method="POST", action='/users/'+selectedUser.id)
+    input(name="_method",value="put", type="hidden")
+    input(name='id',value=selectedUser.id, type="hidden")
+    p
+      label(for="username") User Name:   
+        input(type='text', name='username', value=selectedUser.username, required)
+    p
+      label(for="password") Password:
+        input(type='password', name='password', value='')
+    p
+      label(for="email") Email:
+        input(type='email', name='email', value=selectedUser.email, required)
+    p
+      label(for="firstname") First Name:
+        input(type='text', name='firstname', value=selectedUser.firstname)
+    p
+      label(for="lastname") Last Name:
+        input(type='text', name='lastname', value=selectedUser.lastname)
+    p
+      input(type='submit', value='Edit User')

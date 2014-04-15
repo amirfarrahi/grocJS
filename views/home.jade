@@ -1,0 +1,24 @@
+extends layout
+
+block title
+  title #{title}
+
+block content
+  p Feel free to browse
+  p 
+    | Check out registered 
+    a(href='/users') Users 
+    | or you can 
+    a(href='/users/new') Add User
+  p Browse list of 
+    a(href='/stores') Stores 
+    | or you can 
+    a(href='/stores/new') Add Store
+  p Browse list of 
+    a(href='/products') Products 
+    | or you can 
+    a(href='/products/new') Add Product
+  p Find list of  
+    a(href='/deals') Deals 
+    | near you or you can 
+    a(href='/deals/new') Add Deal

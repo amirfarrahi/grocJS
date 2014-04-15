@@ -1,0 +1,14 @@
+html
+  head
+    
+    block title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    -var menu = { 'home': '/users/home', 'about us': '/aboutus', 'contact': '/contact' };
+    ul.nav  
+      each val, key in menu
+        li 
+          a(href=val)= key
+    block content
+
+

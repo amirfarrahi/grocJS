@@ -1,0 +1,32 @@
+extends layout
+
+block title
+  title #{title}
+
+block content
+  form( method="POST", action='/stores/'+selectedStore.id)
+    input(name="_method",value="delete", type="hidden")
+    input(id="delete", value="Delete", type="submit")
+  P
+    a(href='/stores/'+ selectedStore.id + '/edit') Edit info
+  div
+    table
+      thead
+        tr
+          th Store Name 
+          th Description
+          th City
+          th State
+          th Country
+          th Zip Code
+      tbody
+        tr
+          td= selectedStore.storename
+          td= selectedStore.desc
+          td= selectedStore.city
+          td= selectedStore.state
+          td= selectedStore.country
+          td= selectedStore.zipcode
+
+          //    a(href='stores/'+ store.id) more details 
+

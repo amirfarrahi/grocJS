@@ -1,0 +1,25 @@
+extends layout
+
+block title
+  title #{title}
+
+block content
+  p #{err}
+  form(method="POST", action="/users")
+    p
+      label(for="username") User Name:   
+        input(type='text', name='username', value='', required)
+    p
+      label(for="password") Password:
+        input(type='password', name='password', value='')
+    p
+      label(for="email") Email:
+        input(type='email', name='email', value='', required)
+    p
+      label(for="firstname") First Name:
+        input(type='text', name='firstname', value='')
+    p
+      label(for="lastname") Last Name:
+        input(type='text', name='lastname', value='')
+    p
+      input(type='submit', value='Add User')

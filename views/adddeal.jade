@@ -1,0 +1,31 @@
+extends layout
+
+block title
+  title #{title}
+
+block content
+  p #{err}
+  form(method="POST", action="/deals")
+    p
+      label(for="price") Price:   
+        input(type='text', name='price', value='', required)
+    p
+      label(for="store") Store:
+        select(name='store')
+          each store in Storelist
+            option(value=store.id)=store.storename
+    p
+      label(for="product") Product:
+        select(name='product')
+          each product in Productlist
+            option(value=product.id)=product.productname
+    p
+      label(for="product") User:
+        select(name='user')
+          each user in Userlist
+            option(value=user.id)=user.username
+    p
+      label(for="desc") desc:
+        input(type='text', name='desc', value='', required)
+    p
+      input(type='submit', value='Add Deal')

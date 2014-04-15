@@ -1,0 +1,33 @@
+extends layout
+
+block title
+  title #{title}
+
+block content
+  p #{err}
+  form(method="POST", action='/stores/'+selectedStore.id)
+    input(name="_method",value="put", type="hidden")
+    input(name='id',value=selectedStore.id, type="hidden")
+    p
+      label(for="storename") Name:   
+        input(type='text', name='storename', value=selectedStore.storename, required)
+    p
+      label(for="desc") Description:
+        input(type='text', name='desc', value=selectedStore.desc)
+    p
+      label(for="add") Address:
+        input(type='text', name='add', value=selectedStore.add, required)
+    p
+      label(for="city") City:
+        input(type='text', name='city', value=selectedStore.city)
+    p
+      label(for="state") State:
+        input(type='text', name='state', value=selectedStore.state)
+    p
+      label(for="country") Country:
+        input(type='text', name='country', value=selectedStore.country)
+    p
+      label(for="zipcode") Zip Code:
+        input(type='text', name='zipcode', value=selectedStore.zipcode)
+    p
+      input(type='submit', value='Edit Store')

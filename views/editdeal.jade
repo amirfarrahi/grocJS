@@ -1,0 +1,42 @@
+extends layout
+
+block title
+  title #{title}
+
+block content
+  p #{err}
+  form(method="POST", action='/deals/'+selectedDeal.id)
+    input(name="_method",value="put", type="hidden")
+    input(name='id',value=selectedDeal.id, type="hidden")
+    p
+      label(for="price") Price:   
+        input(type='text', name='price', value=selectedDeal.price, required)
+    p
+      label(for="store") Store:
+        select(name='store')
+          each store in Storelist
+            if selectedDeal.store.id==store.id
+              option(value=store.id, selected='selected')=store.storename
+            else
+              option(value=store.id )=store.storename
+    p
+      label(for="product") Product:
+        select(name='product')
+          each product in Productlist
+            if selectedDeal.product.id==product.id
+              option(value=product.id, selected='selected')=product.productname
+            else
+              option(value=product.id )=product.productname
+    p
+      label(for="user") User:
+        select(name='user')
+          each user in Userlist
+            if selectedDeal.user.id==user.id
+              option(value=user.id, selected='selected')=user.username
+            else
+              option(value=user.id )=user.username 
+    p
+      label(for="desc") desc:
+        input(type='text', name='desc', value=selectedDeal.desc, required)
+    p
+      input(type='submit', value='Edit Deal')

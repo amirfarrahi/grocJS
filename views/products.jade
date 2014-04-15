@@ -1,0 +1,21 @@
+extends layout
+
+block title
+  title #{title}
+
+block content
+  h1= title
+  div
+    table
+      thead
+        tr
+          th Product Name 
+          th Description
+          th Brand
+      tbody
+        each product in Products
+          tr
+            td= product.productname 
+            td= product.desc
+            td
+              a(href='/products/'+ product.id) more details           

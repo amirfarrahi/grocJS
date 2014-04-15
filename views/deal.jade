@@ -1,0 +1,27 @@
+extends layout
+
+block title
+  title #{title}
+
+block content
+  form( method="POST", action='/deals/'+selectedDeal.id)
+    input(name="_method",value="delete", type="hidden")
+    input(id="delete", value="Delete", type="submit")
+  P
+    a(href='/deals/'+ selectedDeal.id + '/edit') Edit info
+  div
+    table
+      thead
+        tr
+          th Product  
+          th Store
+          th User
+          th Price
+          th Desc
+      tbody
+          tr
+            td= selectedDeal.product.productname 
+            td= selectedDeal.store.storename 
+            td= selectedDeal.user.username
+            td= selectedDeal.price
+            td= selectedDeal.desc
