@@ -29,7 +29,7 @@ if ('development' == app.get('env')) {
 }
 
 
-app.get('/users/home', function(req, res, next){
+app.get('/', function(req, res, next){
 res.render('home', { title: 'home page' });
 });
 
@@ -37,7 +37,6 @@ app.resource('users', require('./routes/user.js'));
 app.resource('stores', require('./routes/store.js'));
 app.resource('products', require('./routes/product.js'));
 app.resource('deals', require('./routes/deal.js'));
-
 http.createServer(app).listen(config.port, function(){
   console.log('Express server listening on port ' + config.port);
 });

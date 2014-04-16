@@ -1,7 +1,7 @@
 var config = {
   local: {
       mode: 'local',
-      port: '3000', 
+      port: '3500', 
       mongo: {
         'hostname': 'amir-HP-Pavilion-dv5-Notebook-PC',
         'port': 27017,
