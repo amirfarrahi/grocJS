@@ -4,7 +4,7 @@ html
     block title
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
-    -var menu = { 'home': '/', 'about us': '/aboutus', 'contact': '/contact' };
+    -var menu = { 'home': '/users/home', 'about us': '/aboutus', 'contact': '/contact' };
     ul.nav  
       each val, key in menu
         li 
