@@ -3,12 +3,12 @@ var config = {
       mode: 'local',
       port: '3500', 
       mongo: {
-        'hostname': 'ds035607.mongolab.com',
-        'port': 35607,
+        'hostname': 'ds053778.mongolab.com',
+        'port': 53778,
         'username': 'amir',
         'password': 'abcdefg',
         'name': '',
-        'db': 'heroku_app24265460'
+        'db': 'heroku_app24333237'
       }
    },
   production: {
