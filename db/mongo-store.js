@@ -1,7 +1,7 @@
 var mongoose = require('mongoose'),
     config = require('../config/config')();
 
-var mongourl='mongodb://' + config.mongo.username + ':' + config.mongo.password + '@' + config.mongo.hostname + ':' + config.mongo.port + '/' + config.mongo.db;
+var mongourl=process.env.MONGOLAB_URI || 'mongodb://' + config.mongo.username + ':' + config.mongo.password + '@' + config.mongo.hostname + ':' + config.mongo.port + '/' + config.mongo.db;
 
 mongoose.connection.on('connected', function () {
   console.log('Mongoose default connection open to ' + mongourl);
