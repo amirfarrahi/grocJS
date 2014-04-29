@@ -37,6 +37,8 @@ app.resource('users', require('./routes/user.js'));
 app.resource('stores', require('./routes/store.js'));
 app.resource('products', require('./routes/product.js'));
 app.resource('deals', require('./routes/deal.js'));
-http.createServer(app).listen(process.env.PORT || config.port , function(){
-  console.log('Express server listening on port ' + process.env.PORT || config.port );
+var port = Number(process.env.PORT || config.port);
+http.createServer(app).listen(port , function(){
+  console.log('Express server listening on port ' + port );
 });
+
