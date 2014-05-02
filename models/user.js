@@ -14,7 +14,7 @@ var UserSchema = new Schema({
 
 UserSchema.pre('save', function(next) {
     var _this = this;
-   if (this._doc.password && this.password != '_default_') {
+   if (this.password && this.password != '_default_') {
         this.password = sha1b64(this.password);
     }
     if (this.isNew)
